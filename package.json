@@ -1,0 +1,74 @@
+{
+  "name": "reynard-core",
+  "version": "0.2.0",
+  "description": "Core utilities and modules for Reynard framework",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./modules": {
+      "types": "./dist/modules/index.d.ts",
+      "import": "./dist/modules/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build && rm -f tsconfig.tsbuildinfo && tsc -p tsconfig.json --declaration --emitDeclarationOnly",
+    "build:types": "tsc -p tsconfig.json --emitDeclarationOnly",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:coverage:check": "vitest run --coverage --reporter=verbose",
+    "test:docs": "vitest run --config vitest.docs.config.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "reynard-algorithms": "^0.39.0",
+    "reynard-validation": "^0.39.0"
+  },
+  "optionalDependencies": {
+    "reynard-i18n": "workspace:*"
+  },
+  "devDependencies": {
+    "@solidjs/testing-library": "0.8.10",
+    "@types/node": "24.7.0",
+    "@vitest/coverage-v8": "3.2.4",
+    "@vitest/ui": "3.2.4",
+    "happy-dom": "19.0.2",
+    "msw": "^2.11.3",
+    "reynard-testing": "^0.39.0",
+    "typescript": "5.9.3",
+    "vite": "7.1.9",
+    "vite-plugin-solid": "2.11.9",
+    "vitest": "3.2.4"
+  },
+  "peerDependencies": {
+    "solid-js": "1.9.9"
+  },
+  "license": "MIT",
+  "keywords": [
+    "reynard",
+    "typescript",
+    "utilities",
+    "framework"
+  ],
+  "homepage": "https://github.com/RuneClaw17/reynard-core",
+  "bugs": {
+    "url": "https://github.com/RuneClaw17/reynard-core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RuneClaw17/reynard-core.git"
+  }
+}
