@@ -1,4 +1,8 @@
 /**
+ * @file crypto implementation
+ */
+
+/**
  * Cryptographic Utilities
  * Secure random number generation and cryptographic functions
  *

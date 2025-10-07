@@ -1,4 +1,8 @@
 /**
+ * @file Tests for utils
+ */
+
+/**
  * Tests for Package Exports Types
  */
 
@@ -9,7 +13,7 @@ import {
   ExportValidationLevel,
   ExportValidationError,
   type ExportMetadata,
-} from "../package-exports-types";
+} from "../../utils/package-exports-types";
 
 describe("Package Exports Types", () => {
   describe("ExportType enum", () => {

@@ -1,4 +1,8 @@
 /**
+ * @file Tests for __tests__
+ */
+
+/**
  * Minimal test without complex setup
  */
 

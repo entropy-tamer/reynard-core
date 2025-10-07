@@ -1,10 +1,17 @@
 /**
+ * @file hashing implementation
+ */
+
+/**
  * Hashing Utilities
  * Functions for cryptographic hashing operations
  */
 
 /**
  * Hash a string using Web Crypto API
+ * @param input
+ * @param algorithm
+ * @example
  */
 export async function hashString(
   input: string,

@@ -1,10 +1,16 @@
 /**
+ * @file basic implementation
+ */
+
+/**
  * Basic Validation Utilities
  * Simple validation functions for common data types
  */
 
 /**
  * Username validation
+ * @param username
+ * @example
  */
 export function isValidUsername(username: string): boolean {
   // 3-20 characters, alphanumeric and underscores only, cannot start with number
@@ -14,6 +20,8 @@ export function isValidUsername(username: string): boolean {
 
 /**
  * Hexadecimal color validation
+ * @param color
+ * @example
  */
 export function isValidHexColor(color: string): boolean {
   const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -22,6 +30,8 @@ export function isValidHexColor(color: string): boolean {
 
 /**
  * IP address validation (IPv4 and IPv6)
+ * @param ip
+ * @example
  */
 export function isValidIPAddress(ip: string): boolean {
   // IPv4 pattern
@@ -35,6 +45,10 @@ export function isValidIPAddress(ip: string): boolean {
 
 /**
  * Numeric range validation
+ * @param value
+ * @param min
+ * @param max
+ * @example
  */
 export function isInRange(value: number, min: number, max: number): boolean {
   return value >= min && value <= max;
@@ -42,6 +56,10 @@ export function isInRange(value: number, min: number, max: number): boolean {
 
 /**
  * String length validation
+ * @param str
+ * @param minLength
+ * @param maxLength
+ * @example
  */
 export function isValidLength(
   str: string,
@@ -53,6 +71,8 @@ export function isValidLength(
 
 /**
  * Required field validation
+ * @param value
+ * @example
  */
 export function isRequired(value: unknown): boolean {
   if (value === null || value === undefined) return false;

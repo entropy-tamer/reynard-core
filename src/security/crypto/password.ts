@@ -1,4 +1,8 @@
 /**
+ * @file password implementation
+ */
+
+/**
  * Password Generation Utilities
  * Functions for generating secure passwords
  */
@@ -8,6 +12,14 @@ import { generateSecureString } from "./random";
 
 /**
  * Generate a secure random password
+ * @param length
+ * @param options
+ * @param options.includeUppercase
+ * @param options.includeLowercase
+ * @param options.includeNumbers
+ * @param options.includeSymbols
+ * @param options.excludeSimilar
+ * @example
  */
 export function generateSecurePassword(
   length: number = 16,

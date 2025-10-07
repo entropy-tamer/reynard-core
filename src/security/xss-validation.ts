@@ -1,10 +1,16 @@
 /**
+ * @file Validation utilities for security
+ */
+
+/**
  * XSS Validation Utilities
  * Cross-site scripting prevention and validation functions
  */
 
 /**
  * Validate input for XSS attacks
+ * @param input
+ * @example
  */
 export function validateXSSInput(input: string): boolean {
   if (!input || typeof input !== "string") {
@@ -87,20 +93,20 @@ export function validateXSSInput(input: string): boolean {
 
 /**
  * Sanitize input to prevent XSS
+ * @param input
+ * @example
  */
 export function sanitizeXSSInput(input: string): string {
   if (!input || typeof input !== "string") {
     return "";
   }
 
-  return input
+  let sanitized = input;
+
+  // Remove dangerous tags completely
+  sanitized = sanitized
     .replace(/<script[^>]*>.*?<\/script>/gi, "")
     .replace(/<script[^>]*>/gi, "")
-    .replace(/on\w+\s*=\s*["'][^"']*["']/gi, "")
-    .replace(/on\w+\s*=\s*[^>\s]+/gi, "")
-    .replace(/javascript:/gi, "")
-    .replace(/vbscript:/gi, "")
-    .replace(/data:text\/html/gi, "")
     .replace(/<iframe[^>]*>.*?<\/iframe>/gi, "")
     .replace(/<object[^>]*>.*?<\/object>/gi, "")
     .replace(/<embed[^>]*>.*?<\/embed>/gi, "")
@@ -108,12 +114,33 @@ export function sanitizeXSSInput(input: string): string {
     .replace(/<input[^>]*>/gi, "")
     .replace(/<button[^>]*>.*?<\/button>/gi, "")
     .replace(/<style[^>]*>.*?<\/style>/gi, "")
-    .replace(/expression\s*\(/gi, "")
     .replace(/<meta[^>]*http-equiv\s*=\s*["']refresh["'][^>]*>/gi, "")
-    .replace(/<link[^>]*href\s*=\s*["']javascript:/gi, "")
-    .replace(/data:text\/html;base64,/gi, "")
-    .replace(/<svg[^>]*>.*?<script.*?<\/script>.*?<\/svg>/gi, "")
-    .replace(/url\s*\(\s*["']?javascript:/gi, "")
+    .replace(/<svg[^>]*>.*?<script.*?<\/script>.*?<\/svg>/gi, "");
+
+  // Remove event handlers from remaining tags
+  sanitized = sanitized.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, "").replace(/\s*on\w+\s*=\s*[^>\s]+/gi, "");
+
+  // Clean up javascript: URLs in href and src attributes
+  sanitized = sanitized
+    .replace(/href\s*=\s*["']javascript:[^"']*["']/gi, 'href=""')
+    .replace(/src\s*=\s*["']javascript:[^"']*["']/gi, 'src=""')
+    .replace(/href\s*=\s*["']vbscript:[^"']*["']/gi, 'href=""')
+    .replace(/src\s*=\s*["']vbscript:[^"']*["']/gi, 'src=""')
+    .replace(/href\s*=\s*["']data:text\/html[^"']*["']/gi, 'href=""')
+    .replace(/src\s*=\s*["']data:text\/html[^"']*["']/gi, 'src=""');
+
+  // Remove remaining dangerous protocols
+  sanitized = sanitized
+    .replace(/javascript:/gi, "")
+    .replace(/vbscript:/gi, "")
+    .replace(/data:text\/html/gi, "")
+    .replace(/data:text\/html;base64,/gi, "");
+
+  // Remove CSS expressions
+  sanitized = sanitized.replace(/expression\s*\(/gi, "").replace(/url\s*\(\s*["']?javascript:/gi, "");
+
+  // Remove encoded dangerous characters
+  sanitized = sanitized
     .replace(/&#x3c;/gi, "")
     .replace(/&#60;/gi, "")
     .replace(/%3c/gi, "")
@@ -122,10 +149,17 @@ export function sanitizeXSSInput(input: string): string {
     .replace(/&#62;/gi, "")
     .replace(/%3e/gi, "")
     .replace(/%3E/gi, "");
+
+  // Clean up extra spaces but preserve empty attributes with quotes
+  sanitized = sanitized.replace(/\s+/g, " ").replace(/>\s+</g, "><").replace(/\s+>/g, ">").replace(/<\s+/g, "<");
+
+  return sanitized;
 }
 
 /**
  * Validate HTML content for XSS
+ * @param html
+ * @example
  */
 export function validateHTMLContent(html: string): {
   isValid: boolean;

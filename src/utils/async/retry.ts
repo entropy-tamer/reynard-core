@@ -1,4 +1,8 @@
 /**
+ * @file retry implementation
+ */
+
+/**
  * Retry Utilities
  * Functions for retrying operations with backoff strategies
  */

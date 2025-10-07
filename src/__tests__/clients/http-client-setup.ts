@@ -1,4 +1,8 @@
 /**
+ * @file Test setup for clients
+ */
+
+/**
  * Test setup for HTTP Client tests
  * Provides mocks and test utilities for HTTP client functionality
  */

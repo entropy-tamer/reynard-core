@@ -1,4 +1,8 @@
 /**
+ * @file Validation utilities for security
+ */
+
+/**
  * File Validation Utilities
  * File name and path validation functions
  */
@@ -7,6 +11,8 @@
 
 /**
  * Check for path traversal patterns in filename
+ * @param filename
+ * @example
  */
 function _checkPathTraversal(filename: string): boolean {
   const pathTraversalPatterns = [
@@ -28,6 +34,8 @@ function _checkPathTraversal(filename: string): boolean {
 
 /**
  * Check if filename is a reserved Windows name
+ * @param filename
+ * @example
  */
 function _isReservedName(filename: string): boolean {
   const reservedNames = [
@@ -61,6 +69,8 @@ function _isReservedName(filename: string): boolean {
 
 /**
  * Check if file extension is executable
+ * @param filename
+ * @example
  */
 function _isExecutableExtension(filename: string): boolean {
   const executableExtensions = [
@@ -91,6 +101,8 @@ function _isExecutableExtension(filename: string): boolean {
  * Validate and sanitize file names
  * 🐺 FIXED: Enhanced file name validation with comprehensive path traversal prevention
  * *snarls with predatory glee* No more escaping my security!
+ * @param filename
+ * @example
  */
 export function validateFileName(filename: string): {
   isValid: boolean;
@@ -157,6 +169,9 @@ export function validateFileName(filename: string): {
 
 /**
  * Validate file extension
+ * @param filename
+ * @param allowedExtensions
+ * @example
  */
 export function validateFileExtension(filename: string, allowedExtensions: string[]): boolean {
   if (!filename || !allowedExtensions || allowedExtensions.length === 0) {
@@ -169,6 +184,9 @@ export function validateFileExtension(filename: string, allowedExtensions: strin
 
 /**
  * Validate file type by extension (alias for validateFileExtension)
+ * @param filename
+ * @param allowedTypes
+ * @example
  */
 export function isValidFileType(filename: string, allowedTypes: string[]): boolean {
   return validateFileExtension(filename, allowedTypes);
@@ -176,6 +194,9 @@ export function isValidFileType(filename: string, allowedTypes: string[]): boole
 
 /**
  * Validate file size
+ * @param size
+ * @param maxSize
+ * @example
  */
 export function validateFileSize(size: number, maxSize?: number): boolean {
   const defaultMaxSize = 10 * 1024 * 1024; // 10MB default
@@ -186,6 +207,9 @@ export function validateFileSize(size: number, maxSize?: number): boolean {
 
 /**
  * Validate file size with required max size (alias for validateFileSize)
+ * @param size
+ * @param maxSize
+ * @example
  */
 export function isValidFileSize(size: number, maxSize: number): boolean {
   return size > 0 && size <= maxSize;
@@ -193,6 +217,8 @@ export function isValidFileSize(size: number, maxSize: number): boolean {
 
 /**
  * Get safe filename by removing dangerous characters
+ * @param filename
+ * @example
  */
 export function getSafeFilename(filename: string): string {
   const result = validateFileName(filename);

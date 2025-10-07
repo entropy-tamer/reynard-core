@@ -1,4 +1,8 @@
 /**
+ * @file language-detection implementation
+ */
+
+/**
  * Language detection utilities
  */
 
@@ -53,6 +57,8 @@ const SPECIAL_FILENAME_MAP: Record<string, LanguageInfo> = {
 
 /**
  * Detect language from file extension
+ * @param filename
+ * @example
  */
 export function detectLanguageFromExtension(filename: string): LanguageDetectionResult {
   if (!filename || typeof filename !== "string") {
@@ -85,6 +91,9 @@ export function detectLanguageFromExtension(filename: string): LanguageDetection
 
 /**
  * Detect language from file content (basic heuristics)
+ * @param content
+ * @param t
+ * @example
  */
 export function detectLanguageFromContent(content: string, t?: (key: string) => string): LanguageDetectionResult {
   if (!content || typeof content !== "string") {
@@ -172,6 +181,9 @@ export function detectLanguageFromContent(content: string, t?: (key: string) => 
 
 /**
  * Get language info for a file
+ * @param filename
+ * @param content
+ * @example
  */
 export function getLanguageInfo(filename: string, content?: string): LanguageDetectionResult {
   // Try extension first
@@ -193,6 +205,7 @@ export function getLanguageInfo(filename: string, content?: string): LanguageDet
 
 /**
  * Get all available languages
+ * @example
  */
 export function getAllLanguages(): LanguageInfo[] {
   return Object.values(LANGUAGE_MAP);
@@ -200,6 +213,8 @@ export function getAllLanguages(): LanguageInfo[] {
 
 /**
  * Get languages by category
+ * @param category
+ * @example
  */
 export function getLanguagesByCategory(category: LanguageInfo["category"]): LanguageInfo[] {
   return Object.values(LANGUAGE_MAP).filter(lang => lang.category === category);

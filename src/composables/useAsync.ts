@@ -1,4 +1,8 @@
 /**
+ * @file useAsync implementation
+ */
+
+/**
  * Async composable - manages async operations with reactive state
  * Provides loading, error, and data states for async operations
  */
@@ -42,6 +46,9 @@ export interface UseAsyncReturn<T> {
 
 /**
  * Hook for managing async operations
+ * @param asyncFn
+ * @param options
+ * @example
  */
 export const useAsync = <T>(
   asyncFn: (...args: any[]) => Promise<T>,

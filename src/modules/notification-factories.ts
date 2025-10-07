@@ -1,4 +1,8 @@
 /**
+ * @file notification-factories implementation
+ */
+
+/**
  * Notification factory functions for different notification types
  * Provides convenient methods for creating common notification patterns
  */

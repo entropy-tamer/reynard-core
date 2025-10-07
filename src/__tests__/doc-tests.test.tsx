@@ -1,4 +1,8 @@
 /**
+ * @file Tests for __tests__
+ */
+
+/**
  * Auto-generated documentation tests for reynard-core
  *
  * This file contains tests extracted from the documentation examples.
@@ -12,6 +16,11 @@ import { render, screen, cleanup } from "@solidjs/testing-library";
 // import { runDocTests } from 'reynard-testing/doc-tests';
 
 // Custom assertion helper since we can't import from reynard-testing yet
+/**
+ *
+ * @param element
+ * @example
+ */
 function expectElementToBeInTheDocument(element: Element | null) {
   expect(element).toBeTruthy();
   expect(element).toBeInTheDocument();
@@ -32,18 +41,26 @@ describe("Documentation Examples", () => {
 
     const notificationsModule = createNotificationsModule();
 
+    /**
+     *
+     * @example
+     */
     function NotificationsDemo() {
       const { notify } = useNotifications();
 
       return (
         <div data-testid="notifications-demo">
           <button data-testid="notification-button" onClick={() => notify("Test notification", "success")}>
-            Show Notification
+            {i18n.t("show.notification")}
           </button>
         </div>
       );
     }
 
+    /**
+     *
+     * @example
+     */
     function TestableApp() {
       return (
         <NotificationsProvider value={notificationsModule}>

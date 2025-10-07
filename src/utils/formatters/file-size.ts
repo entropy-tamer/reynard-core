@@ -1,4 +1,8 @@
 /**
+ * @file file-size implementation
+ */
+
+/**
  * File Size Formatting Utilities
  * Functions for formatting file sizes and bytes
  */

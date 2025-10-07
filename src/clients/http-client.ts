@@ -1,4 +1,8 @@
 /**
+ * @file Client implementation for clients
+ */
+
+/**
  * HTTP Client for Core Package
  * Simple HTTP client implementation for core package functionality
  */
@@ -28,7 +32,18 @@ export interface HTTPResponse<T = any> {
   headers: Record<string, string>;
 }
 
+/**
+ *
+ */
 export class HTTPError extends Error {
+  /**
+   *
+   * @param message
+   * @param status
+   * @param statusText
+   * @param response
+   * @example
+   */
   constructor(
     message: string,
     public status: number,
@@ -40,10 +55,18 @@ export class HTTPError extends Error {
   }
 }
 
+/**
+ *
+ */
 export class HTTPClient {
   private config: HTTPClientConfig;
   private baseHeaders: Record<string, string>;
 
+  /**
+   *
+   * @param config
+   * @example
+   */
   constructor(config: HTTPClientConfig) {
     this.config = {
       timeout: 30000,
@@ -67,6 +90,11 @@ export class HTTPClient {
     }
   }
 
+  /**
+   *
+   * @param options
+   * @example
+   */
   async request<T = any>(options: HTTPRequestOptions): Promise<HTTPResponse<T>> {
     const url = `${this.config.baseUrl}${options.endpoint}`;
     const headers = { ...this.baseHeaders, ...options.headers };
@@ -109,6 +137,14 @@ export class HTTPClient {
     }
   }
 
+  /**
+   *
+   * @param options
+   * @param options.endpoint
+   * @param options.formData
+   * @param options.headers
+   * @example
+   */
   async upload(options: {
     endpoint: string;
     formData: FormData;
@@ -122,6 +158,11 @@ export class HTTPClient {
     });
   }
 
+  /**
+   *
+   * @param updates
+   * @example
+   */
   updateConfig(updates: Partial<HTTPClientConfig>): void {
     this.config = { ...this.config, ...updates };
 
@@ -138,6 +179,10 @@ export class HTTPClient {
     }
   }
 
+  /**
+   *
+   * @example
+   */
   getConfig(): HTTPClientConfig {
     return { ...this.config };
   }

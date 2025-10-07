@@ -1,4 +1,8 @@
 /**
+ * @file optional-i18n implementation
+ */
+
+/**
  * Centralized Optional i18n utility for Reynard Framework
  * Provides fallback functionality when i18n is not available
  * Used by all Reynard packages for graceful i18n fallback

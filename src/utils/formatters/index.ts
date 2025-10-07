@@ -1,4 +1,8 @@
 /**
+ * @file Index file for formatters
+ */
+
+/**
  * Formatters Index
  * Re-exports all formatting utilities
  */

@@ -1,4 +1,8 @@
 /**
+ * @file Formatting utilities for utils
+ */
+
+/**
  * Formatting Utilities
  * Comprehensive formatting functions for data display
  *

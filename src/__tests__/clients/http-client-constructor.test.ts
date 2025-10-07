@@ -1,9 +1,20 @@
 /**
+ * @file Tests for clients
+ */
+
+/**
  * Tests for HTTPClient constructor
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { HTTPClient, HTTPClientConfig, mockFetch } from "../http-client-setup";
+import { HTTPClient, mockFetch } from "../../clients/__tests__/http-client-setup";
+
+interface HTTPClientConfig {
+  baseURL?: string;
+  apiKey?: string;
+  timeout?: number;
+  headers?: Record<string, string>;
+}
 
 describe("HTTPClient Constructor", () => {
   let httpClient: HTTPClient;

@@ -1,4 +1,8 @@
 /**
+ * @file Tests for modules
+ */
+
+/**
  * Notifications module tests
  */
 

@@ -1,10 +1,17 @@
 /**
+ * @file comparison implementation
+ */
+
+/**
  * Comparison Utilities
  * Functions for secure comparison operations
  */
 
 /**
  * Constant-time string comparison to prevent timing attacks
+ * @param a
+ * @param b
+ * @example
  */
 export function constantTimeCompare(a: string, b: string): boolean {
   if (a.length !== b.length) {

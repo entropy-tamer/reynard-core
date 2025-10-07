@@ -1,4 +1,8 @@
 /**
+ * @file Tests for __tests__
+ */
+
+/**
  * Tests for optional i18n functionality with i18n package
  * Verifies behavior when i18n is available
  */

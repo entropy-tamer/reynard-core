@@ -1,4 +1,8 @@
 /**
+ * @file Tests for composables
+ */
+
+/**
  * useClickOutside composable tests
  */
 

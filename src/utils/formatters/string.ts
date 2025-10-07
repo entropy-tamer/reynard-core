@@ -1,4 +1,8 @@
 /**
+ * @file string implementation
+ */
+
+/**
  * String Formatting Utilities
  * Functions for formatting and manipulating strings
  */

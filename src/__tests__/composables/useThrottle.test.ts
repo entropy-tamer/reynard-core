@@ -1,4 +1,8 @@
 /**
+ * @file Tests for composables
+ */
+
+/**
  * useThrottle composable tests
  */
 

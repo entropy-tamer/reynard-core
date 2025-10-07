@@ -1,4 +1,8 @@
 /**
+ * @file dateUtils implementation
+ */
+
+/**
  * Date Utilities
  * Comprehensive date formatting and manipulation utilities
  */
@@ -113,6 +117,7 @@ export function formatDuration(duration: number): string {
 
 /**
  * Gets the current date formatted as YYYY-MM-DD
+ * @example
  */
 export function getCurrentDate(): string {
   return new Date().toISOString().split("T")[0];
@@ -120,6 +125,7 @@ export function getCurrentDate(): string {
 
 /**
  * Gets the current time formatted as HH:MM:SS
+ * @example
  */
 export function getCurrentTime(): string {
   return new Date().toTimeString().split(" ")[0];
@@ -127,6 +133,8 @@ export function getCurrentTime(): string {
 
 /**
  * Checks if a date is today
+ * @param date
+ * @example
  */
 export function isToday(date: Date | number): boolean {
   const today = new Date();
@@ -137,6 +145,8 @@ export function isToday(date: Date | number): boolean {
 
 /**
  * Checks if a date is yesterday
+ * @param date
+ * @example
  */
 export function isYesterday(date: Date | number): boolean {
   const yesterday = new Date();
@@ -148,6 +158,8 @@ export function isYesterday(date: Date | number): boolean {
 
 /**
  * Gets start of day for a given date
+ * @param date
+ * @example
  */
 export function startOfDay(date: Date | number): Date {
   const d = typeof date === "number" ? new Date(date) : new Date(date);
@@ -157,6 +169,8 @@ export function startOfDay(date: Date | number): Date {
 
 /**
  * Gets end of day for a given date
+ * @param date
+ * @example
  */
 export function endOfDay(date: Date | number): Date {
   const d = typeof date === "number" ? new Date(date) : new Date(date);

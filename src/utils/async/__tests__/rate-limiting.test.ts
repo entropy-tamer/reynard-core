@@ -1,4 +1,8 @@
 /**
+ * @file Tests for __tests__
+ */
+
+/**
  * Comprehensive test suite for enhanced async rate limiting utilities
  *
  * Tests the integration with the algorithms package and async-specific features

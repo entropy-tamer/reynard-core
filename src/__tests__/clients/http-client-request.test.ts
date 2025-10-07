@@ -1,9 +1,29 @@
 /**
+ * @file Tests for clients
+ */
+
+/**
  * Tests for HTTPClient request methods
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { HTTPClient, HTTPClientConfig, RequestOptions, mockFetch } from "../http-client-setup";
+import { HTTPClient, mockFetch } from "../../clients/__tests__/http-client-setup";
+
+interface HTTPClientConfig {
+  baseURL?: string;
+  apiKey?: string;
+  timeout?: number;
+  headers?: Record<string, string>;
+}
+
+interface RequestOptions {
+  method: string;
+  url: string;
+  data?: any;
+  headers?: Record<string, string>;
+  timeout?: number;
+}
+
 import { t } from "../../../utils/optional-i18n";
 
 describe("HTTPClient Request Methods", () => {

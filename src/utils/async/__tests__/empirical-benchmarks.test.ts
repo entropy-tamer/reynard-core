@@ -1,4 +1,8 @@
 /**
+ * @file Tests for __tests__
+ */
+
+/**
  * Empirical Performance Benchmarks for ASYNC-RATE
  * Using real timers to get actual performance data
  */

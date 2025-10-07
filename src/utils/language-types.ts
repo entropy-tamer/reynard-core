@@ -1,4 +1,8 @@
 /**
+ * @file Type definitions for utils
+ */
+
+/**
  * Language type definitions and interfaces
  */
 

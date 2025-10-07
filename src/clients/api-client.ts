@@ -1,4 +1,8 @@
 /**
+ * @file Client implementation for clients
+ */
+
+/**
  * Generic API Client Interface for Reynard Framework
  *
  * Provides a standardized interface for API clients with common patterns
@@ -29,12 +33,20 @@ export interface ApiClientInfo {
   lastHealthCheck?: number;
 }
 
+/**
+ *
+ */
 export abstract class ApiClient {
   protected httpClient: HTTPClient;
   protected config: ApiClientConfig;
   protected lastHealthCheck?: number;
   protected healthCheckInterval?: number;
 
+  /**
+   *
+   * @param config
+   * @example
+   */
   constructor(config: ApiClientConfig) {
     this.config = {
       serviceName: "api-client",
@@ -47,6 +59,7 @@ export abstract class ApiClient {
 
   /**
    * Get client information
+   * @example
    */
   getInfo(): ApiClientInfo {
     return {
@@ -60,6 +73,7 @@ export abstract class ApiClient {
 
   /**
    * Check if the client is connected (override in subclasses)
+   * @example
    */
   isConnected(): boolean {
     return this.lastHealthCheck !== undefined && Date.now() - this.lastHealthCheck < 60000; // 1 minute
@@ -67,6 +81,7 @@ export abstract class ApiClient {
 
   /**
    * Perform health check (override in subclasses)
+   * @example
    */
   async checkHealth(): Promise<HealthStatus> {
     try {
@@ -101,6 +116,8 @@ export abstract class ApiClient {
 
   /**
    * Start periodic health checks
+   * @param intervalMs
+   * @example
    */
   startHealthChecks(intervalMs: number = 30000): void {
     this.healthCheckInterval = window.setInterval(async () => {
@@ -110,6 +127,7 @@ export abstract class ApiClient {
 
   /**
    * Stop periodic health checks
+   * @example
    */
   stopHealthChecks(): void {
     if (this.healthCheckInterval) {
@@ -120,6 +138,8 @@ export abstract class ApiClient {
 
   /**
    * Update client configuration
+   * @param updates
+   * @example
    */
   updateConfig(updates: Partial<ApiClientConfig>): void {
     this.config = { ...this.config, ...updates };
@@ -128,6 +148,7 @@ export abstract class ApiClient {
 
   /**
    * Get current configuration
+   * @example
    */
   getConfig(): ApiClientConfig {
     return { ...this.config };
@@ -135,6 +156,7 @@ export abstract class ApiClient {
 
   /**
    * Dispose of resources
+   * @example
    */
   dispose(): void {
     this.stopHealthChecks();

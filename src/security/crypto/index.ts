@@ -1,4 +1,8 @@
 /**
+ * @file Index file for crypto
+ */
+
+/**
  * Cryptographic Utilities Index
  * Re-exports all cryptographic utilities
  */

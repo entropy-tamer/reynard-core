@@ -1,4 +1,8 @@
 /**
+ * @file Index file for clients
+ */
+
+/**
  * HTTP Clients for Reynard Framework
  *
  * Provides reusable HTTP client infrastructure for all API integrations.

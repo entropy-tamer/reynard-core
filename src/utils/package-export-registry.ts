@@ -1,21 +1,40 @@
 /**
+ * @file package-export-registry implementation
+ */
+
+/**
  * Package Export Registry
  */
 
-import { LazyPackageExport, LazyPackageExportImpl } from "./lazy-package-export";
+import { LazyPackageExport } from "../lazy-loading/lazy-package-export";
 
 const exportRegistry = new Map<string, LazyPackageExport>();
 
+/**
+ *
+ * @param packageName
+ * @param loader
+ * @example
+ */
 export function createLazyExport(packageName: string, loader: () => Promise<any>): LazyPackageExport {
-  const lazyExport = new LazyPackageExportImpl(packageName, loader);
+  const lazyExport = new LazyPackageExport(packageName, loader);
   exportRegistry.set(packageName, lazyExport);
   return lazyExport;
 }
 
+/**
+ *
+ * @param packageName
+ * @example
+ */
 export function getLazyExport(packageName: string): LazyPackageExport | undefined {
   return exportRegistry.get(packageName);
 }
 
+/**
+ *
+ * @example
+ */
 export function clearExportRegistry(): void {
   exportRegistry.clear();
 }

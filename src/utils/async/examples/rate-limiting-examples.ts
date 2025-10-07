@@ -1,4 +1,8 @@
 /**
+ * @file rate-limiting-examples implementation
+ */
+
+/**
  * Enhanced Async Rate Limiting Examples
  *
  * Comprehensive examples demonstrating the enhanced async debounce and throttle
@@ -22,6 +26,7 @@ import {
 /**
  * Example 1: Basic Async Debounce
  * Perfect for search inputs, API calls, and form submissions
+ * @example
  */
 export async function basicDebounceExample() {
   // Simulate an API call
@@ -51,6 +56,7 @@ export async function basicDebounceExample() {
 /**
  * Example 2: Basic Async Throttle
  * Perfect for scroll handlers, resize events, and real-time updates
+ * @example
  */
 export async function basicThrottleExample() {
   // Simulate a scroll handler
@@ -78,6 +84,7 @@ export async function basicThrottleExample() {
 /**
  * Example 3: Leading Edge Debounce
  * Executes immediately on first call, then debounces subsequent calls
+ * @example
  */
 export async function leadingEdgeDebounceExample() {
   const saveToServer = async (data: any): Promise<void> => {
@@ -104,6 +111,7 @@ export async function leadingEdgeDebounceExample() {
 /**
  * Example 4: MaxWait Debounce
  * Ensures function executes at least once within maxWait time
+ * @example
  */
 export async function maxWaitDebounceExample() {
   const processData = async (data: string): Promise<string> => {
@@ -129,6 +137,7 @@ export async function maxWaitDebounceExample() {
 /**
  * Example 5: Throttle with Leading and Trailing
  * Executes immediately and also after the delay period
+ * @example
  */
 export async function leadingTrailingThrottleExample() {
   const updateUI = async (value: number): Promise<void> => {
@@ -157,6 +166,7 @@ export async function leadingTrailingThrottleExample() {
 /**
  * Example 6: AbortController Integration
  * Cancel operations when needed
+ * @example
  */
 export async function abortControllerExample() {
   const longRunningTask = async (taskId: string): Promise<string> => {
@@ -191,6 +201,7 @@ export async function abortControllerExample() {
 /**
  * Example 7: Timeout-based AbortController
  * Automatically cancel after a timeout
+ * @example
  */
 export async function timeoutAbortControllerExample() {
   const slowAPI = async (endpoint: string): Promise<any> => {
@@ -216,6 +227,7 @@ export async function timeoutAbortControllerExample() {
 /**
  * Example 8: Combined AbortSignals
  * Cancel when any of multiple conditions are met
+ * @example
  */
 export async function combinedAbortSignalsExample() {
   const dataProcessor = async (data: any): Promise<any> => {
@@ -256,6 +268,7 @@ export async function combinedAbortSignalsExample() {
 /**
  * Example 9: Cancel and Flush Methods
  * Fine-grained control over debounced/throttled functions
+ * @example
  */
 export async function controlMethodsExample() {
   const expensiveOperation = async (input: string): Promise<string> => {
@@ -299,12 +312,21 @@ export class SearchComponent {
   private debouncedSearch: AsyncDebouncedFunction<[string], SearchResult[]>;
   private abortController: AbortController | null = null;
 
+  /**
+   *
+   * @example
+   */
   constructor() {
     this.debouncedSearch = debounce(this.performSearch.bind(this), 300, {
       precision: PrecisionTier.HIGH,
     }) as AsyncDebouncedFunction<[string], SearchResult[]>;
   }
 
+  /**
+   *
+   * @param query
+   * @example
+   */
   private async performSearch(query: string): Promise<SearchResult[]> {
     console.log(`Searching for: "${query}"`);
 
@@ -318,6 +340,11 @@ export class SearchComponent {
     ];
   }
 
+  /**
+   *
+   * @param query
+   * @example
+   */
   async search(query: string): Promise<SearchResult[]> {
     // Cancel previous search if still pending
     if (this.abortController) {
@@ -345,6 +372,10 @@ export class SearchComponent {
     }
   }
 
+  /**
+   *
+   * @example
+   */
   cancelSearch(): void {
     if (this.abortController) {
       this.abortController.abort();
@@ -352,6 +383,10 @@ export class SearchComponent {
     this.debouncedSearch.cancel();
   }
 
+  /**
+   *
+   * @example
+   */
   isSearching(): boolean {
     return this.debouncedSearch.isPending();
   }
@@ -370,6 +405,7 @@ interface SearchResult {
 /**
  * Example 11: Performance Monitoring
  * Monitor the performance of debounced/throttled operations
+ * @example
  */
 export async function performanceMonitoringExample() {
   const monitoredOperation = async (data: any): Promise<any> => {

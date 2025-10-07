@@ -1,4 +1,8 @@
 /**
+ * @file package-export-registry implementation
+ */
+
+/**
  * Package Export Registry
  *
  * Manages the global registry of lazy package exports and provides
@@ -11,6 +15,13 @@ import { ExportValidationLevel } from "../utils/package-exports-types";
 // Global export registry
 const _exportRegistry = new Map<string, LazyPackageExport>();
 
+/**
+ *
+ * @param packageName
+ * @param loader
+ * @param validationLevel
+ * @example
+ */
 export function createLazyExport(
   packageName: string,
   loader?: () => Promise<any>,
@@ -22,10 +33,19 @@ export function createLazyExport(
   return _exportRegistry.get(packageName)!;
 }
 
+/**
+ *
+ * @param packageName
+ * @example
+ */
 export function getLazyExport(packageName: string): LazyPackageExport | undefined {
   return _exportRegistry.get(packageName);
 }
 
+/**
+ *
+ * @example
+ */
 export function clearExportRegistry(): void {
   _exportRegistry.clear();
 }

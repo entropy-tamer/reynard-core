@@ -1,4 +1,8 @@
 /**
+ * @file Type definitions for image-utils
+ */
+
+/**
  * Image Utils Types
  *
  * TypeScript interfaces for the backend image processing system.

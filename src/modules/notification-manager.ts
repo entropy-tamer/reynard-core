@@ -1,4 +1,8 @@
 /**
+ * @file notification-manager implementation
+ */
+
+/**
  * Notification state management logic
  * Handles adding, updating, and removing notifications
  */

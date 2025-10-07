@@ -1,10 +1,17 @@
 /**
+ * @file Validation utilities for security
+ */
+
+/**
  * MIME Type Validation Utilities
  * MIME type validation and file type checking functions
  */
 
 /**
  * Validate MIME type against allowed types
+ * @param mimeType
+ * @param allowedTypes
+ * @example
  */
 export function validateMimeType(mimeType: string, allowedTypes: string[]): boolean {
   if (!mimeType || typeof mimeType !== "string") {
@@ -20,6 +27,8 @@ export function validateMimeType(mimeType: string, allowedTypes: string[]): bool
 
 /**
  * Get MIME type from file extension
+ * @param filename
+ * @example
  */
 export function getMimeTypeFromExtension(filename: string): string | null {
   if (!filename || typeof filename !== "string") {
@@ -88,6 +97,9 @@ export function getMimeTypeFromExtension(filename: string): string | null {
 
 /**
  * Validate file type by extension
+ * @param filename
+ * @param allowedExtensions
+ * @example
  */
 export function validateFileTypeByExtension(filename: string, allowedExtensions: string[]): boolean {
   if (!filename || typeof filename !== "string") {
@@ -108,6 +120,8 @@ export function validateFileTypeByExtension(filename: string, allowedExtensions:
 
 /**
  * Check if MIME type is safe for upload
+ * @param mimeType
+ * @example
  */
 export function isSafeMimeType(mimeType: string): boolean {
   if (!mimeType || typeof mimeType !== "string") {
@@ -131,6 +145,8 @@ export function isSafeMimeType(mimeType: string): boolean {
 
 /**
  * Get file category from MIME type
+ * @param mimeType
+ * @example
  */
 export function getFileCategory(mimeType: string): string {
   if (!mimeType || typeof mimeType !== "string") {

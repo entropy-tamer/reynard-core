@@ -1,4 +1,8 @@
 /**
+ * @file timing implementation
+ */
+
+/**
  * Timing Utilities
  * Basic timing and delay functions
  */
@@ -24,6 +28,7 @@ export function sleep(ms: number): Promise<void> {
  * @param value - The value to resolve with
  * @param ms - The delay in milliseconds
  * @returns Promise that resolves with the value after the delay
+ * @example
  */
 export function delay<T>(value: T, ms: number): Promise<T> {
   return new Promise(resolve => setTimeout(() => resolve(value), ms));
@@ -54,6 +59,7 @@ export function withTimeout<T>(
 
 /**
  * Waits for the next event loop tick
+ * @example
  */
 export function nextTick(): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, 0));
@@ -61,6 +67,7 @@ export function nextTick(): Promise<void> {
 
 /**
  * Waits for the next animation frame (browser only)
+ * @example
  */
 export function nextFrame(): Promise<number> {
   return new Promise(resolve => {

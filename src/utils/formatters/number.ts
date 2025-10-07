@@ -1,4 +1,8 @@
 /**
+ * @file number implementation
+ */
+
+/**
  * Number Formatting Utilities
  * Functions for formatting numbers, currency, and percentages
  */

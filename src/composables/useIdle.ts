@@ -1,4 +1,8 @@
 /**
+ * @file useIdle implementation
+ */
+
+/**
  * Idle composable - tracks user idle state
  * Detects when user is idle based on activity
  */
@@ -20,6 +24,8 @@ export interface UseIdleOptions {
 
 /**
  * Hook for tracking user idle state
+ * @param options
+ * @example
  */
 export const useIdle = (options: UseIdleOptions = {}) => {
   const {

@@ -1,4 +1,8 @@
 /**
+ * @file Index file for src
+ */
+
+/**
  * Reynard Core Framework
  * A cunning SolidJS framework with modular architecture
  */

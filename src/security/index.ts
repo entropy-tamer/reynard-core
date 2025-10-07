@@ -1,4 +1,8 @@
 /**
+ * @file Index file for security
+ */
+
+/**
  * Security Module
  * Centralized security utilities and configurations for Reynard applications
  */
@@ -107,6 +111,8 @@ export const DEVELOPMENT_SECURITY_CONFIG: SecurityConfig = {
 
 /**
  * Get security configuration based on environment
+ * @param environment
+ * @example
  */
 export function getSecurityConfig(environment: "development" | "production" = "production"): SecurityConfig {
   return environment === "development" ? DEVELOPMENT_SECURITY_CONFIG : DEFAULT_SECURITY_CONFIG;

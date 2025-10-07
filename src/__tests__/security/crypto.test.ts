@@ -1,4 +1,8 @@
 /**
+ * @file Tests for security
+ */
+
+/**
  * Cryptographic Utilities Tests
  * Tests for secure random generation and cryptographic functions
  */

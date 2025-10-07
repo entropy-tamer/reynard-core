@@ -1,4 +1,8 @@
 /**
+ * @file Tests for __tests__
+ */
+
+/**
  * Shared test setup for media query composables
  */
 
@@ -18,6 +22,8 @@ export interface MockMatchMedia {
 
 /**
  * Creates a mock media query object
+ * @param matches
+ * @example
  */
 export const createMockMediaQuery = (matches = false): MockMediaQuery => ({
   matches,
@@ -27,6 +33,7 @@ export const createMockMediaQuery = (matches = false): MockMediaQuery => ({
 
 /**
  * Sets up window.matchMedia mock
+ * @example
  */
 export const setupMatchMediaMock = (): MockMatchMedia => {
   const mockMatchMedia = vi.fn();
@@ -41,6 +48,7 @@ export const setupMatchMediaMock = (): MockMatchMedia => {
 
 /**
  * Cleans up window.matchMedia mock
+ * @example
  */
 export const cleanupMatchMediaMock = (): void => {
   Object.defineProperty(window, "matchMedia", {
@@ -51,6 +59,7 @@ export const cleanupMatchMediaMock = (): void => {
 
 /**
  * Mocks SSR environment by removing window
+ * @example
  */
 export const mockSSR = (): (() => void) => {
   const originalWindow = global.window;

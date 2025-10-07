@@ -1,4 +1,8 @@
 /**
+ * @file notifications implementation
+ */
+
+/**
  * Notifications module - handles notification system
  * Extracted from yipyap's proven notification system
  * Refactored for modularity and maintainability

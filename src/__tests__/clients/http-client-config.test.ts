@@ -1,10 +1,21 @@
 /**
+ * @file Tests for clients
+ */
+
+/**
  * Tests for HTTPClient configuration management
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { HTTPClient, HTTPClientConfig, mockFetch } from "../http-client-setup";
+import { HTTPClient, mockFetch } from "../../clients/__tests__/http-client-setup";
 import { t } from "../../../utils/optional-i18n";
+
+interface HTTPClientConfig {
+  baseURL?: string;
+  apiKey?: string;
+  timeout?: number;
+  headers?: Record<string, string>;
+}
 
 describe("HTTPClient Configuration Management", () => {
   let httpClient: HTTPClient;

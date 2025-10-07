@@ -1,4 +1,8 @@
 /**
+ * @file concurrency implementation
+ */
+
+/**
  * Concurrency Utilities
  * Functions for managing concurrent operations
  */
@@ -36,6 +40,7 @@ export async function batchExecute<T>(promises: Array<() => Promise<T>>, batchSi
  * @param mapper - Async function to apply to each item
  * @param concurrency - Maximum number of concurrent operations
  * @returns Promise that resolves with mapped results
+ * @example
  */
 export async function mapWithConcurrency<T, U>(
   items: T[],

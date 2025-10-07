@@ -1,4 +1,8 @@
 /**
+ * @file Test setup for __tests__
+ */
+
+/**
  * MSW (Mock Service Worker) Setup for Comprehensive Request Interception
  *
  * This setup intercepts ALL HTTP requests regardless of when they're made,

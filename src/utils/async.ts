@@ -1,4 +1,8 @@
 /**
+ * @file Async utilities for utils
+ */
+
+/**
  * Async Utilities
  * Helpful utilities for async operations, promises, and timing
  *

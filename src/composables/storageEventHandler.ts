@@ -1,4 +1,8 @@
 /**
+ * @file storageEventHandler implementation
+ */
+
+/**
  * Storage event handling utilities for cross-tab synchronization
  */
 
@@ -13,6 +17,10 @@ export interface StorageEventHandler<_T = unknown> {
 
 /**
  * Creates a storage event handler for cross-tab synchronization
+ * @param key
+ * @param setValue
+ * @param serializer
+ * @example
  */
 export const createStorageEventHandler = <T>(
   key: string,

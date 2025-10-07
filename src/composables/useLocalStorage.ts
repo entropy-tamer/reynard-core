@@ -1,4 +1,8 @@
 /**
+ * @file useLocalStorage implementation
+ */
+
+/**
  * LocalStorage composable - reactive localStorage with SolidJS
  * Provides persistent reactive state synchronized with localStorage
  */
@@ -18,6 +22,9 @@ export interface UseLocalStorageOptions<T> {
 
 /**
  * Reactive localStorage hook
+ * @param key
+ * @param options
+ * @example
  */
 export const useLocalStorage = <T>(key: string, options: UseLocalStorageOptions<T>) => {
   const { defaultValue, serializer = defaultSerializer as Serializer<T>, syncAcrossTabs = true } = options;

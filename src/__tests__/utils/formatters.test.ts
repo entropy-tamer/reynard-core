@@ -1,3 +1,7 @@
+/**
+ * @file Tests for utils
+ */
+
 import { describe, it, expect } from "vitest";
 import {
   formatFileSize,

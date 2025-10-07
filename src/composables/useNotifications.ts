@@ -1,4 +1,8 @@
 /**
+ * @file useNotifications implementation
+ */
+
+/**
  * Notifications composable - SolidJS composable for notification management
  * Provides reactive notification state and utilities
  */
@@ -13,6 +17,7 @@ export const NotificationsProvider = NotificationsContext.Provider;
 /**
  * Hook for accessing notification state and utilities
  * Must be used within a NotificationsProvider
+ * @example
  */
 export const useNotifications = (): NotificationsModule => {
   const context = useContext(NotificationsContext);
@@ -31,6 +36,7 @@ export const createNotifications = createNotificationsModule;
 /**
  * Hook for notification utilities only
  * Useful for components that only need to send notifications
+ * @example
  */
 export const useNotify = () => {
   const { notify, createNotification, removeNotification, clearNotifications } = useNotifications();
@@ -40,6 +46,7 @@ export const useNotify = () => {
 /**
  * Hook for notification values only
  * Useful for components that only need to display notifications
+ * @example
  */
 export const useNotificationValues = (): Notification[] => {
   const { notifications } = useNotifications();

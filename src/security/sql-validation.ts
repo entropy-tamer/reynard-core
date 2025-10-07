@@ -1,4 +1,8 @@
 /**
+ * @file Validation utilities for security
+ */
+
+/**
  * SQL Validation Utilities
  * SQL injection prevention and input validation
  */
@@ -9,6 +13,8 @@ import { t as _t } from "../utils/optional-i18n";
  * Validate SQL input to prevent injection attacks
  * 🐺 FIXED: Enhanced SQL injection prevention with comprehensive pattern detection
  * *snarls with predatory glee* No more SQL injection attempts!
+ * @param input
+ * @example
  */
 export function validateSQLInput(input: string): {
   isValid: boolean;
@@ -121,6 +127,8 @@ export function validateSQLInput(input: string): {
 
 /**
  * Sanitize SQL input by escaping special characters
+ * @param input
+ * @example
  */
 export function sanitizeSQLInput(input: string): string {
   if (!input || typeof input !== "string") {
@@ -139,6 +147,8 @@ export function sanitizeSQLInput(input: string): string {
 
 /**
  * Validate SQL identifier (table name, column name, etc.)
+ * @param identifier
+ * @example
  */
 export function validateSQLIdentifier(identifier: string): boolean {
   if (!identifier || typeof identifier !== "string") {
@@ -152,6 +162,8 @@ export function validateSQLIdentifier(identifier: string): boolean {
 
 /**
  * Validate SQL parameter placeholder
+ * @param param
+ * @example
  */
 export function validateSQLParameter(param: string): boolean {
   if (!param || typeof param !== "string") {

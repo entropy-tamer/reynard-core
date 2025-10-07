@@ -1,4 +1,8 @@
 /**
+ * @file Tests for composables
+ */
+
+/**
  * useMediaQuery composable tests - simplified version
  */
 

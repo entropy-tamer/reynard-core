@@ -1,4 +1,8 @@
 /**
+ * @file Index file for modules
+ */
+
+/**
  * Reynard Core Modules
  * Modular, zero-dependency utilities for SolidJS applications
  */

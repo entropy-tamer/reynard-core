@@ -1,4 +1,8 @@
 /**
+ * @file useIntersectionObserver implementation
+ */
+
+/**
  * Intersection Observer composable - observes element visibility
  * Useful for lazy loading, infinite scrolling, and visibility-based animations
  */
@@ -20,6 +24,8 @@ export interface UseIntersectionObserverOptions {
 
 /**
  * Hook for observing element intersection with viewport
+ * @param options
+ * @example
  */
 export const useIntersectionObserver = <T extends HTMLElement>(options: UseIntersectionObserverOptions = {}) => {
   const [isIntersecting, setIsIntersecting] = createSignal(false);

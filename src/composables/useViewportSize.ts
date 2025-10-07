@@ -1,4 +1,8 @@
 /**
+ * @file useViewportSize implementation
+ */
+
+/**
  * Viewport Size composable - tracks viewport dimensions
  * Provides reactive viewport width and height
  */
@@ -21,6 +25,8 @@ export interface UseViewportSizeOptions {
 
 /**
  * Hook for tracking viewport size
+ * @param options
+ * @example
  */
 export const useViewportSize = (options: UseViewportSizeOptions = {}) => {
   const { enabled = true, debounceMs = 100, onSizeChange } = options;

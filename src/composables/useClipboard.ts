@@ -1,4 +1,8 @@
 /**
+ * @file useClipboard implementation
+ */
+
+/**
  * Clipboard composable - manages clipboard operations
  * Provides reactive clipboard read/write functionality
  */
@@ -14,6 +18,8 @@ export interface UseClipboardOptions {
 
 /**
  * Hook for managing clipboard operations
+ * @param options
+ * @example
  */
 export const useClipboard = (options: UseClipboardOptions = {}) => {
   const { enabled = true, onClipboardChange } = options;

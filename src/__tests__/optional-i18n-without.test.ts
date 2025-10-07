@@ -1,4 +1,8 @@
 /**
+ * @file Tests for __tests__
+ */
+
+/**
  * Tests for optional i18n functionality without i18n package
  * Verifies fallback behavior when i18n is not available
  */

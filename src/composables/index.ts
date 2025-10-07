@@ -1,4 +1,8 @@
 /**
+ * @file Index file for composables
+ */
+
+/**
  * Reynard Core Composables
  * Reusable reactive utilities for SolidJS applications
  */

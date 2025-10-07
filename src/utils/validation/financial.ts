@@ -1,10 +1,16 @@
 /**
+ * @file financial implementation
+ */
+
+/**
  * Financial Validation Utilities
  * Functions for validating financial data like credit cards and SSNs
  */
 
 /**
  * Credit card number validation using Luhn algorithm
+ * @param cardNumber
+ * @example
  */
 export function isValidCreditCard(cardNumber: string): boolean {
   // Remove all non-digit characters
@@ -38,6 +44,9 @@ export function isValidCreditCard(cardNumber: string): boolean {
 
 /**
  * ZIP/Postal code validation (US and international)
+ * @param postalCode
+ * @param country
+ * @example
  */
 export function isValidPostalCode(postalCode: string, country: string = "US"): boolean {
   // Handle null/undefined/empty input
@@ -61,6 +70,8 @@ export function isValidPostalCode(postalCode: string, country: string = "US"): b
 
 /**
  * Social Security Number validation (US format)
+ * @param ssn
+ * @example
  */
 export function isValidSSN(ssn: string): boolean {
   // Handle null/undefined/empty input

@@ -1,9 +1,27 @@
 /**
+ * @file Tests for clients
+ */
+
+/**
  * Tests for HTTPClient upload methods
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { HTTPClient, HTTPClientConfig, UploadOptions, mockFetch } from "../http-client-setup";
+import { HTTPClient, mockFetch } from "../../clients/__tests__/http-client-setup";
+
+interface HTTPClientConfig {
+  baseURL?: string;
+  apiKey?: string;
+  timeout?: number;
+  headers?: Record<string, string>;
+}
+
+interface UploadOptions {
+  url: string;
+  formData: FormData;
+  headers?: Record<string, string>;
+  timeout?: number;
+}
 
 describe("HTTPClient Upload Methods", () => {
   let httpClient: HTTPClient;

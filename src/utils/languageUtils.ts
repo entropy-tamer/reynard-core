@@ -1,4 +1,8 @@
 /**
+ * @file languageUtils implementation
+ */
+
+/**
  * Language Utilities
  * Main module that re-exports language detection and mapping functions
  */
@@ -39,27 +43,53 @@ export { getLanguageInfo as detectLanguage } from "./language-detection.js";
 export { getAllLanguages as getSupportedLanguages } from "./language-detection.js";
 
 // Legacy function exports for backward compatibility with tests
+/**
+ *
+ * @param filename
+ * @example
+ */
 export function getMonacoLanguage(filename: string): string {
   const result = detectLanguageFromExtension(filename);
   return result.language?.monacoLanguage || "plaintext";
 }
 
+/**
+ *
+ * @param filename
+ * @param t
+ * @example
+ */
 export function getLanguageDisplayName(filename: string, t?: (key: string) => string): string {
   const result = detectLanguageFromExtension(filename);
   return result.language?.displayName || (t ? t("core.languageDetection.plainText") : "Plain Text");
 }
 
+/**
+ *
+ * @param filename
+ * @example
+ */
 export function isCodeFile(filename: string): boolean {
   const result = detectLanguageFromExtension(filename);
   return result.language?.isCode || false;
 }
 
+/**
+ *
+ * @param filename
+ * @example
+ */
 export function getLanguageCategory(filename: string): string {
   const result = detectLanguageFromExtension(filename);
   return result.language?.category || "other";
 }
 
 // Legacy getLanguageInfo function that returns the expected structure
+/**
+ *
+ * @param filename
+ * @example
+ */
 export function getLanguageInfo(filename: string): {
   monacoLanguage: string;
   displayName: string;
@@ -85,23 +115,43 @@ export function getLanguageInfo(filename: string): {
 }
 
 // Path utility functions
+/**
+ *
+ * @param filename
+ * @example
+ */
 export function getFileExtension(filename: string): string {
   if (!filename || typeof filename !== "string") return "";
   const parts = filename.split(".");
   return parts.length > 1 ? parts.pop() || "" : "";
 }
 
+/**
+ *
+ * @param path
+ * @example
+ */
 export function getFileName(path: string): string {
   if (!path || typeof path !== "string") return "";
   return path.split(/[/\\]/).pop() || "";
 }
 
+/**
+ *
+ * @param path
+ * @example
+ */
 export function getFileNameWithoutExtension(path: string): string {
   const filename = getFileName(path);
   const extension = getFileExtension(filename);
   return extension ? filename.slice(0, -(extension.length + 1)) : filename;
 }
 
+/**
+ *
+ * @param path
+ * @example
+ */
 export function getDirectoryPath(path: string): string {
   if (!path || typeof path !== "string") return "/";
   const parts = path.split(/[/\\]/);

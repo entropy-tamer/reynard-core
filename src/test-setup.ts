@@ -1,4 +1,8 @@
 /**
+ * @file Tests for src
+ */
+
+/**
  * Test setup for core package
  * Simplified setup to avoid recursive issues
  */

@@ -1,4 +1,8 @@
 /**
+ * @file useApiClient implementation
+ */
+
+/**
  * useApiClient Composable
  *
  * Provides a reactive API client for SolidJS applications
@@ -25,6 +29,8 @@ export interface UseApiClientReturn {
 
 /**
  * Creates a reactive API client with health monitoring
+ * @param options
+ * @example
  */
 export function useApiClient(options: UseApiClientOptions = {}): UseApiClientReturn {
   const [client, setClient] = createSignal<ApiClient | null>(null);
@@ -42,6 +48,10 @@ export function useApiClient(options: UseApiClientOptions = {}): UseApiClientRet
 
       // Create a basic API client implementation
       const apiClient = new (class extends ApiClient {
+        /**
+         *
+         * @example
+         */
         async healthCheck(): Promise<HealthStatus> {
           try {
             // Simple health check - just verify the client is configured

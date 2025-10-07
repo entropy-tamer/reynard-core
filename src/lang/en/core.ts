@@ -1,4 +1,8 @@
 /**
+ * @file core implementation
+ */
+
+/**
  * Core Package Translations
  * Core functionality translations for the core package
  */

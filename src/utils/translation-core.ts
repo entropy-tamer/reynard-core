@@ -1,4 +1,8 @@
 /**
+ * @file translation-core implementation
+ */
+
+/**
  * Core translation functionality for optional i18n
  * Handles the main translation logic with fallback support
  */
@@ -14,6 +18,7 @@ let i18nAvailable = false;
  * Attempts to load the i18n module dynamically
  * Returns true if successful, false otherwise
  * DISABLED: Always returns false to prevent recursion issues
+ * @example
  */
 function tryLoadI18n(): boolean {
   // Always return false to prevent i18n loading and recursion issues
@@ -23,6 +28,9 @@ function tryLoadI18n(): boolean {
 
 /**
  * Translation function that falls back to hardcoded strings when i18n is unavailable
+ * @param key
+ * @param params
+ * @example
  */
 export function translate(key: string, params?: TranslationParams): string {
   // Try to load i18n if not already attempted
@@ -54,6 +62,7 @@ export function translate(key: string, params?: TranslationParams): string {
 
 /**
  * Check if i18n is available
+ * @example
  */
 export function isI18nAvailable(): boolean {
   if (i18nModule === null) {
@@ -64,6 +73,7 @@ export function isI18nAvailable(): boolean {
 
 /**
  * Get the i18n module if available, null otherwise
+ * @example
  */
 export function getI18nModule(): I18nModule | null {
   if (i18nModule === null) {

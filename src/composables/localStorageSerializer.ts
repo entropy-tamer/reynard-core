@@ -1,4 +1,8 @@
 /**
+ * @file localStorageSerializer implementation
+ */
+
+/**
  * Safe JSON serialization utilities for localStorage
  * Prevents XSS attacks and prototype pollution
  */

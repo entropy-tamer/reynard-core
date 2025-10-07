@@ -1,4 +1,8 @@
 /**
+ * @file Test setup for __tests__
+ */
+
+/**
  * Shared test setup for HTTP client tests
  */
 
@@ -31,6 +35,9 @@ export const mockFetch = vi.fn();
 global.fetch = mockFetch;
 
 // Create a mock HTTPClient class
+/**
+ *
+ */
 class MockHTTPClient {
   public config: any;
   public baseHeaders: any;
@@ -39,6 +46,11 @@ class MockHTTPClient {
   public getConfig: any;
   public updateConfig: any;
 
+  /**
+   *
+   * @param config
+   * @example
+   */
   constructor(config: any) {
     this.config = {
       baseUrl: config.baseUrl,

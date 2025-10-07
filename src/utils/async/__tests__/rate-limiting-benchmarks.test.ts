@@ -1,4 +1,8 @@
 /**
+ * @file Tests for __tests__
+ */
+
+/**
  * Comprehensive Performance Benchmarks for Async Rate Limiting
  *
  * This test suite provides empirical performance data for the ASYNC-RATE system,

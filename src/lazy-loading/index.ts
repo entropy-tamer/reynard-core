@@ -1,4 +1,8 @@
 /**
+ * @file Index file for lazy-loading
+ */
+
+/**
  * Frontend Lazy Loading Module
  *
  * Exports frontend lazy loading functionality for dynamic module loading.

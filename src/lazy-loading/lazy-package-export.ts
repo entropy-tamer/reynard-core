@@ -1,4 +1,8 @@
 /**
+ * @file lazy-package-export implementation
+ */
+
+/**
  * Lazy Package Export Implementation
  *
  * Provides lazy loading functionality for heavy ML packages with proxy-based
@@ -13,6 +17,9 @@ import {
   ExportType,
 } from "../utils/package-exports-types";
 
+/**
+ *
+ */
 export class LazyPackageExport {
   private _module: any = null;
   private _metadata: ExportMetadata;
@@ -20,6 +27,15 @@ export class LazyPackageExport {
   private _enablePerformanceMonitoring: boolean;
   private _autoCleanup: boolean;
 
+  /**
+   *
+   * @param _packageName
+   * @param _loader
+   * @param validationLevel
+   * @param enablePerformanceMonitoring
+   * @param autoCleanup
+   * @example
+   */
   constructor(
     private _packageName: string,
     private _loader?: () => Promise<any>,
@@ -41,6 +57,10 @@ export class LazyPackageExport {
     };
   }
 
+  /**
+   *
+   * @example
+   */
   async getModule(): Promise<any> {
     if (this._module) {
       this._updateAccessStats();
@@ -74,11 +94,19 @@ export class LazyPackageExport {
     }
   }
 
+  /**
+   *
+   * @example
+   */
   private async _dynamicImport(): Promise<any> {
     // Dynamic import for ES modules
     return await import(/* @vite-ignore */ this._packageName);
   }
 
+  /**
+   *
+   * @example
+   */
   private async _validateExport(): Promise<void> {
     if (!this._module) {
       throw new ExportValidationError(t("core.errors.moduleIsNull"), this._packageName);
@@ -91,20 +119,36 @@ export class LazyPackageExport {
     }
   }
 
+  /**
+   *
+   * @example
+   */
   private _updateAccessStats(): void {
     this._metadata.accessCount++;
     this._metadata.lastAccess = Date.now();
   }
 
+  /**
+   *
+   * @example
+   */
   private _estimateMemoryUsage(): number {
     // Simple memory estimation based on module size
     return JSON.stringify(this._module).length * 2; // Rough estimate
   }
 
+  /**
+   *
+   * @example
+   */
   getMetadata(): ExportMetadata {
     return { ...this._metadata };
   }
 
+  /**
+   *
+   * @example
+   */
   reset(): void {
     this._module = null;
     this._metadata.loadTime = undefined;

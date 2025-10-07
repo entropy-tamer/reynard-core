@@ -1,4 +1,8 @@
 /**
+ * @file language-mappings implementation
+ */
+
+/**
  * Language mappings for file extensions
  */
 

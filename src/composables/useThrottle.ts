@@ -1,4 +1,8 @@
 /**
+ * @file useThrottle implementation
+ */
+
+/**
  * Throttle composable - throttled reactive values and callbacks
  * Limits the rate at which a function can be called
  */
@@ -8,6 +12,9 @@ import { throttle } from "reynard-algorithms";
 
 /**
  * Throttles a reactive value
+ * @param value
+ * @param delay
+ * @example
  */
 export const useThrottle = <T>(value: () => T, delay: number) => {
   const [throttledValue, setThrottledValue] = createSignal<T>(value());
@@ -49,6 +56,9 @@ export const useThrottle = <T>(value: () => T, delay: number) => {
 
 /**
  * Throttles a function call
+ * @param callback
+ * @param delay
+ * @example
  */
 export const useThrottledCallback = <TArgs extends unknown[]>(
   callback: (...args: TArgs) => void,

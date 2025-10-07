@@ -1,4 +1,8 @@
 /**
+ * @file common implementation
+ */
+
+/**
  * Common Translations for Core Package
  * Shared translations used across the core package
  */

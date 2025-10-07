@@ -1,4 +1,8 @@
 /**
+ * @file fallback-translations implementation
+ */
+
+/**
  * Comprehensive fallback translations for all Reynard packages
  * Provides English fallbacks when i18n is not available
  */

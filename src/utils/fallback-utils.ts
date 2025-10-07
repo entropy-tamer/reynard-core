@@ -1,4 +1,8 @@
 /**
+ * @file Utility functions for utils
+ */
+
+/**
  * Utility functions for managing fallback translations
  * Provides registration and query capabilities for fallback translations
  */
@@ -9,6 +13,9 @@ import { FALLBACK_TRANSLATIONS } from "./fallback-translations";
 /**
  * Register additional fallback translations for a package
  * This allows packages to add their own fallback translations
+ * @param packageName
+ * @param translations
+ * @example
  */
 export function registerFallbackTranslations(packageName: string, translations: Record<string, string>): void {
   for (const [key, value] of Object.entries(translations)) {
@@ -19,6 +26,7 @@ export function registerFallbackTranslations(packageName: string, translations: 
 
 /**
  * Get all available fallback translation keys
+ * @example
  */
 export function getAvailableFallbackKeys(): string[] {
   return Object.keys(FALLBACK_TRANSLATIONS);
@@ -26,6 +34,8 @@ export function getAvailableFallbackKeys(): string[] {
 
 /**
  * Check if a fallback translation exists for a key
+ * @param key
+ * @example
  */
 export function hasFallbackTranslation(key: string): boolean {
   return key in FALLBACK_TRANSLATIONS;
@@ -33,6 +43,7 @@ export function hasFallbackTranslation(key: string): boolean {
 
 /**
  * Create a mock i18n module for testing
+ * @example
  */
 export function createMockI18n(): I18nModule {
   return {

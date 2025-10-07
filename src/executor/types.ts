@@ -1,4 +1,8 @@
 /**
+ * @file Type definitions for executor
+ */
+
+/**
  * Executor Types
  *
  * TypeScript interfaces for the backend thread pool executor system.

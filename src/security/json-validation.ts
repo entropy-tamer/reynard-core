@@ -1,10 +1,16 @@
 /**
+ * @file Validation utilities for security
+ */
+
+/**
  * JSON Validation Utilities
  * JSON parsing and validation functions with security checks
  */
 
 /**
  * Validate and parse JSON with security checks
+ * @param input
+ * @example
  */
 export function validateJSON(input: string): {
   isValid: boolean;
@@ -41,6 +47,8 @@ export function validateJSON(input: string): {
 
 /**
  * Check for prototype pollution in nested objects
+ * @param obj
+ * @example
  */
 function hasPrototypePollution(obj: Record<string, unknown>): boolean {
   if (typeof obj !== "object" || obj === null) {
@@ -64,6 +72,8 @@ function hasPrototypePollution(obj: Record<string, unknown>): boolean {
 
 /**
  * Sanitize JSON by removing dangerous properties
+ * @param input
+ * @example
  */
 export function sanitizeJSON(input: string): string {
   if (!input || typeof input !== "string") {
@@ -81,6 +91,8 @@ export function sanitizeJSON(input: string): string {
 
 /**
  * Remove dangerous properties from objects
+ * @param obj
+ * @example
  */
 function removeDangerousProperties(obj: unknown): unknown {
   if (typeof obj !== "object" || obj === null) {

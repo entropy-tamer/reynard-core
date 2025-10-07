@@ -1,4 +1,8 @@
 /**
+ * @file Type definitions for utils
+ */
+
+/**
  * Type definitions for i18n module interface
  * Used by optional-i18n utility for type safety
  */

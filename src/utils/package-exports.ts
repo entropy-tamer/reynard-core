@@ -1,4 +1,8 @@
 /**
+ * @file package-exports implementation
+ */
+
+/**
  * Reynard Package Export System
  *
  * This file is deprecated. Use the new modular structure:

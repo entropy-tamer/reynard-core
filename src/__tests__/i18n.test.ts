@@ -1,4 +1,8 @@
 /**
+ * @file Tests for __tests__
+ */
+
+/**
  * i18n Tests for Core Package
  * Tests internationalization functionality for the core package
  */

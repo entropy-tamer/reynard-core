@@ -1,4 +1,8 @@
 /**
+ * @file Type definitions for hf-cache
+ */
+
+/**
  * HuggingFace Cache Types
  *
  * TypeScript interfaces for the backend HuggingFace cache management system.

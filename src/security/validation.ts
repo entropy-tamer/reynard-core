@@ -1,4 +1,8 @@
 /**
+ * @file Validation utilities for security
+ */
+
+/**
  * Security Validation Utilities
  * Main validation module that re-exports specialized validation functions
  */
@@ -12,11 +16,17 @@ export { validateSQLInput, sanitizeSQLInput, validateSQLIdentifier, validateSQLP
 // Note: General input validation functions (validateURL, validateEmail, etc.)
 // have been moved to the dedicated reynard-validation package
 
+// Re-export URL validation from reynard-validation package
+export { validateUrlSecurity as validateURL } from "reynard-validation";
+
 // Re-export JSON validation functions
 export { validateJSON, sanitizeJSON } from "./json-validation.js";
 
 // Re-export XSS validation functions
 export { validateXSSInput, sanitizeXSSInput, validateHTMLContent } from "./xss-validation.js";
+
+// Alias for backward compatibility
+export { sanitizeXSSInput as sanitizeHTML } from "./xss-validation.js";
 
 // Re-export MIME validation functions
 export {

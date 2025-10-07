@@ -1,4 +1,8 @@
 /**
+ * @file advanced implementation
+ */
+
+/**
  * Advanced Async Utilities
  * Complex async operations like polling, memoization, and cancelable promises
  */
@@ -13,6 +17,7 @@ import { t } from "../optional-i18n";
  * @param interval - Polling interval in milliseconds
  * @param timeout - Maximum time to wait in milliseconds
  * @returns Promise that resolves when condition is true
+ * @example
  */
 export async function poll(
   condition: () => Promise<boolean> | boolean,
@@ -37,6 +42,7 @@ export async function poll(
  * @param fn - Async function to memoize
  * @param keyGenerator - Function to generate cache key from arguments
  * @returns Memoized function
+ * @example
  */
 export function memoizeAsync<T extends (...args: any[]) => Promise<any>>(
   fn: T,
@@ -69,6 +75,11 @@ export interface CancelablePromise<T> extends Promise<T> {
   isCanceled: () => boolean;
 }
 
+/**
+ *
+ * @param promise
+ * @example
+ */
 export function makeCancelable<T>(promise: Promise<T>): CancelablePromise<T> {
   let isCanceled = false;
   let isResolved = false;

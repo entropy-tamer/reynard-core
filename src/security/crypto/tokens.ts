@@ -1,4 +1,8 @@
 /**
+ * @file tokens implementation
+ */
+
+/**
  * Token Generation Utilities
  * Functions for generating secure tokens and nonces
  */
@@ -8,6 +12,7 @@ import { constantTimeCompare } from "./comparison";
 
 /**
  * Generate a secure nonce for CSP
+ * @example
  */
 export function generateNonce(): string {
   return generateSecureHex(32);
@@ -15,6 +20,7 @@ export function generateNonce(): string {
 
 /**
  * Generate a secure CSRF token
+ * @example
  */
 export function generateCSRFToken(): string {
   return generateSecureHex(64);
@@ -22,6 +28,9 @@ export function generateCSRFToken(): string {
 
 /**
  * Validate CSRF token with constant-time comparison
+ * @param token
+ * @param expectedToken
+ * @example
  */
 export function validateCSRFToken(token: string, expectedToken: string): boolean {
   if (!token && !expectedToken) {
@@ -35,6 +44,7 @@ export function validateCSRFToken(token: string, expectedToken: string): boolean
 
 /**
  * Generate a secure session ID
+ * @example
  */
 export function generateSessionID(): string {
   return generateSecureHex(128);
@@ -42,6 +52,8 @@ export function generateSessionID(): string {
 
 /**
  * Generate a secure API key
+ * @param prefix
+ * @example
  */
 export function generateAPIKey(prefix: string = "rk"): string {
   const randomPart = generateSecureHex(64);
@@ -50,6 +62,7 @@ export function generateAPIKey(prefix: string = "rk"): string {
 
 /**
  * Generate a secure password reset token
+ * @example
  */
 export function generatePasswordResetToken(): string {
   return generateSecureHex(64);
@@ -57,6 +70,7 @@ export function generatePasswordResetToken(): string {
 
 /**
  * Generate a secure email verification token
+ * @example
  */
 export function generateEmailVerificationToken(): string {
   return generateSecureHex(64);

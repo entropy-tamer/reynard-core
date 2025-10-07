@@ -1,4 +1,8 @@
 /**
+ * @file useGeolocation implementation
+ */
+
+/**
  * Geolocation composable - tracks user's geographic location
  * Provides reactive location data with error handling
  */
@@ -31,6 +35,8 @@ export interface UseGeolocationOptions {
 
 /**
  * Hook for tracking geolocation
+ * @param options
+ * @example
  */
 export const useGeolocation = (options: UseGeolocationOptions = {}) => {
   const {

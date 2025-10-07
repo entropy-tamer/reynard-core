@@ -1,4 +1,8 @@
 /**
+ * @file Index file for __tests__
+ */
+
+/**
  * Test utilities for useMediaQuery composable
  *
  * Note: This file only exports test utilities, not the actual test files.

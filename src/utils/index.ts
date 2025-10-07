@@ -1,4 +1,8 @@
 /**
+ * @file Index file for utils
+ */
+
+/**
  * Reynard Core Utilities
  * Comprehensive utility functions for the Reynard framework
  */

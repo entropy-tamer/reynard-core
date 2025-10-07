@@ -1,4 +1,8 @@
 /**
+ * @file rate-limiting implementation
+ */
+
+/**
  * CADENCE: Concurrent Asynchronous Debounce Engine with Non-blocking Consistency Ensurance
  *
  * ⚠️ NOTE: For most use cases, use the simpler synchronous throttle/debounce
@@ -254,6 +258,7 @@ export interface BatchThrottleOptions {
  * @param wait - Minimum delay in milliseconds between executions
  * @param options - Configuration options for throttle behavior
  * @returns Lightweight throttled function
+ * @example
  */
 function throttleLowPrecision<TArgs extends readonly unknown[], TReturn>(
   fn: (...args: TArgs) => TReturn | Promise<TReturn>,
@@ -322,6 +327,7 @@ function throttleLowPrecision<TArgs extends readonly unknown[], TReturn>(
  * @param wait - Delay in milliseconds before execution
  * @param options - Configuration options for debounce behavior
  * @returns Lightweight debounced function
+ * @example
  */
 function debounceLowPrecision<TArgs extends readonly unknown[], TReturn>(
   fn: (...args: TArgs) => TReturn | Promise<TReturn>,
@@ -388,6 +394,7 @@ function debounceLowPrecision<TArgs extends readonly unknown[], TReturn>(
  * @param wait - Minimum delay in milliseconds between batch executions
  * @param options - Configuration options for batch processing
  * @returns Batch throttled function
+ * @example
  */
 export function throttleBatch<TArgs extends readonly unknown[]>(
   fn: (batch: TArgs[]) => void | Promise<void>,
@@ -1065,6 +1072,7 @@ function throttleHighPrecision<TArgs extends readonly unknown[], TReturn>(
  * @param wait - Minimum delay in milliseconds between executions
  * @param options - Configuration options for throttle behavior
  * @returns Medium precision throttled function
+ * @example
  */
 function throttleMediumPrecision<TArgs extends readonly unknown[], TReturn>(
   fn: AsyncFunctionSignature<TArgs, TReturn>,
@@ -1326,6 +1334,7 @@ function throttleMediumPrecision<TArgs extends readonly unknown[], TReturn>(
  * @param wait - Delay in milliseconds before execution
  * @param options - Configuration options for debounce behavior
  * @returns Medium precision debounced function
+ * @example
  */
 function debounceMediumPrecision<TArgs extends readonly unknown[], TReturn>(
   fn: AsyncFunctionSignature<TArgs, TReturn>,
@@ -1525,6 +1534,7 @@ function debounceMediumPrecision<TArgs extends readonly unknown[], TReturn>(
  * @param wait - Minimum delay in milliseconds between executions
  * @param options - Configuration options including precision tier
  * @returns Throttled function with appropriate precision tier
+ * @example
  */
 export function throttle<TArgs extends readonly unknown[], TReturn>(
   fn: AsyncFunctionSignature<TArgs, TReturn>,
@@ -1557,6 +1567,7 @@ export function throttle<TArgs extends readonly unknown[], TReturn>(
  * @param wait - Delay in milliseconds before execution
  * @param options - Configuration options including precision tier
  * @returns Debounced function with appropriate precision tier
+ * @example
  */
 export function debounce<TArgs extends readonly unknown[], TReturn>(
   fn: AsyncFunctionSignature<TArgs, TReturn>,

@@ -1,4 +1,8 @@
 /**
+ * @file headers implementation
+ */
+
+/**
  * Security Headers Configuration
  * Provides security headers for HTTP responses and client-side security policies
  */
@@ -102,6 +106,9 @@ export const DEVELOPMENT_SECURITY_HEADERS: SecurityHeaders = {
 
 /**
  * Apply security headers to a response
+ * @param headers
+ * @param environment
+ * @example
  */
 export function applySecurityHeaders(
   headers: globalThis.Headers,
@@ -116,6 +123,8 @@ export function applySecurityHeaders(
 
 /**
  * Get security headers based on environment
+ * @param environment
+ * @example
  */
 export function getSecurityHeaders(
   environment: "development" | "production" | "strict" = "production"
@@ -133,6 +142,8 @@ export function getSecurityHeaders(
 
 /**
  * Validate HTTPS enforcement
+ * @param request
+ * @example
  */
 export function enforceHTTPS(request: globalThis.Request): boolean {
   // Check if request is over HTTPS
@@ -143,6 +154,7 @@ export function enforceHTTPS(request: globalThis.Request): boolean {
 
 /**
  * Generate nonce for CSP
+ * @example
  */
 export function generateNonce(): string {
   const array = new Uint8Array(16);
@@ -152,6 +164,9 @@ export function generateNonce(): string {
 
 /**
  * Create CSP with nonce
+ * @param nonce
+ * @param environment
+ * @example
  */
 export function createCSPWithNonce(
   nonce: string,
@@ -168,6 +183,9 @@ export function createCSPWithNonce(
 
 /**
  * Security middleware for fetch requests
+ * @param baseUrl
+ * @param options
+ * @example
  */
 export function createSecureFetch(baseUrl: string, options: RequestInit = {}): typeof fetch {
   return async (input: globalThis.RequestInfo | URL, init: RequestInit = {}) => {

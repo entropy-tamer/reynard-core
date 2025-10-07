@@ -1,10 +1,16 @@
 /**
+ * @file random implementation
+ */
+
+/**
  * Random Generation Utilities
  * Functions for generating cryptographically secure random data
  */
 
 /**
  * Generate cryptographically secure random bytes
+ * @param length
+ * @example
  */
 export function generateSecureBytes(length: number): Uint8Array {
   if (typeof crypto === "undefined" || !crypto.getRandomValues) {
@@ -18,6 +24,9 @@ export function generateSecureBytes(length: number): Uint8Array {
 
 /**
  * Generate cryptographically secure random string
+ * @param length
+ * @param charset
+ * @example
  */
 export function generateSecureString(
   length: number = 32,
@@ -48,6 +57,8 @@ export function generateSecureString(
 
 /**
  * Generate secure random hex string
+ * @param length
+ * @example
  */
 export function generateSecureHex(length: number = 32): string {
   const bytes = generateSecureBytes(Math.ceil(length / 2));
@@ -58,6 +69,8 @@ export function generateSecureHex(length: number = 32): string {
 
 /**
  * Generate secure random base64 string
+ * @param length
+ * @example
  */
 export function generateSecureBase64(length: number = 32): string {
   const bytes = generateSecureBytes(length);
@@ -66,6 +79,9 @@ export function generateSecureBase64(length: number = 32): string {
 
 /**
  * Secure random number between min and max (inclusive)
+ * @param min
+ * @param max
+ * @example
  */
 export function secureRandomInt(min: number, max: number): number {
   if (min > max) {

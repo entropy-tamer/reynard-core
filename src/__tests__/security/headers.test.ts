@@ -1,4 +1,8 @@
 /**
+ * @file Tests for security
+ */
+
+/**
  * Security Headers Tests
  * Tests for security header configuration and management
  */
@@ -18,28 +22,60 @@ import {
 } from "../../security/headers";
 
 // Mock Headers class for testing
+/**
+ *
+ */
 class MockHeaders {
   private headers: Map<string, string> = new Map();
 
+  /**
+   *
+   * @param name
+   * @param value
+   * @example
+   */
   set(name: string, value: string): void {
     this.headers.set(name.toLowerCase(), value);
   }
 
+  /**
+   *
+   * @param name
+   * @example
+   */
   get(name: string): string | null {
     return this.headers.get(name.toLowerCase()) || null;
   }
 
+  /**
+   *
+   * @param name
+   * @example
+   */
   has(name: string): boolean {
     return this.headers.has(name.toLowerCase());
   }
 
+  /**
+   *
+   * @example
+   */
   entries(): IterableIterator<[string, string]> {
     return this.headers.entries();
   }
 }
 
 // Mock Request class for testing
+/**
+ *
+ */
 class MockRequest {
+  /**
+   *
+   * @param url
+   * @param headers
+   * @example
+   */
   constructor(
     public url: string,
     public headers: MockHeaders = new MockHeaders()

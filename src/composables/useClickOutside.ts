@@ -1,4 +1,8 @@
 /**
+ * @file useClickOutside implementation
+ */
+
+/**
  * Click Outside composable - detects clicks outside a target element
  * Useful for closing dropdowns, modals, and other overlay components
  */
@@ -14,6 +18,8 @@ export interface UseClickOutsideOptions {
 
 /**
  * Hook for detecting clicks outside a target element
+ * @param options
+ * @example
  */
 export const useClickOutside = <T extends HTMLElement>(options: UseClickOutsideOptions = {}) => {
   const [isOutside, setIsOutside] = createSignal(false);

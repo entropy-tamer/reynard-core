@@ -1,4 +1,8 @@
 /**
+ * @file Utility functions for modules
+ */
+
+/**
  * Notification utilities and constants
  * Extracted from notifications module for better modularity
  */

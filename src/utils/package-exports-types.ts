@@ -1,4 +1,8 @@
 /**
+ * @file Type definitions for utils
+ */
+
+/**
  * Type definitions for the Reynard Package Export System
  *
  * Defines the core interfaces, enums, and error classes used throughout
@@ -34,7 +38,17 @@ export interface ExportMetadata {
   typeHints: Record<string, any>;
 }
 
+/**
+ *
+ */
 export class ExportValidationError extends Error {
+  /**
+   *
+   * @param message
+   * @param packageName
+   * @param exportName
+   * @example
+   */
   constructor(
     message: string,
     public packageName: string,

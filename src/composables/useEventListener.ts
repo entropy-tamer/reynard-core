@@ -1,4 +1,8 @@
 /**
+ * @file useEventListener implementation
+ */
+
+/**
  * Event Listener composable - manages event listeners with automatic cleanup
  * Provides reactive event handling with proper cleanup
  */
@@ -18,6 +22,10 @@ export interface UseEventListenerOptions {
 
 /**
  * Hook for managing event listeners
+ * @param eventName
+ * @param handler
+ * @param options
+ * @example
  */
 export const useEventListener = <K extends keyof WindowEventMap>(
   eventName: K,
@@ -63,6 +71,11 @@ export const useEventListener = <K extends keyof WindowEventMap>(
 
 /**
  * Hook for managing event listeners on a specific element
+ * @param element
+ * @param eventName
+ * @param handler
+ * @param options
+ * @example
  */
 export const useElementEventListener = <T extends HTMLElement, K extends keyof HTMLElementEventMap>(
   element: () => T | null,

@@ -1,3 +1,7 @@
+/**
+ * @file Tests for utils
+ */
+
 import { describe, it, expect } from "vitest";
 // Note: isValidEmail, isValidPhoneNumber, validatePasswordStrength, isValidUrl
 // have been moved to the dedicated reynard-validation package

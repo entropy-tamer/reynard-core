@@ -1,4 +1,8 @@
 /**
+ * @file uuid implementation
+ */
+
+/**
  * UUID Generation Utilities
  * Functions for generating secure UUIDs
  */
@@ -7,6 +11,7 @@ import { generateSecureBytes } from "./random";
 
 /**
  * Generate a secure UUID v4
+ * @example
  */
 export function generateSecureUUID(): string {
   const bytes = generateSecureBytes(16);

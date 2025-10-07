@@ -1,4 +1,8 @@
 /**
+ * @file Tests for security
+ */
+
+/**
  * Tests for HTML validation and sanitization
  */
 
