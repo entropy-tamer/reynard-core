@@ -34,8 +34,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "reynard-algorithms": "^0.39.0",
-    "reynard-validation": "^0.39.0"
+    "reynard-algorithms": "^0.43.0",
+    "reynard-validation": "^0.43.0"
   },
   "optionalDependencies": {
     "reynard-i18n": "workspace:*"
@@ -47,7 +47,7 @@
     "@vitest/ui": "3.2.4",
     "happy-dom": "19.0.2",
     "msw": "^2.11.3",
-    "reynard-testing": "^0.39.0",
+    "reynard-testing": "^0.43.0",
     "typescript": "5.9.3",
     "vite": "7.1.9",
     "vite-plugin-solid": "2.11.9",
