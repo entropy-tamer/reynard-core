@@ -17,7 +17,9 @@
       "import": "./dist/modules/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build && rm -f tsconfig.tsbuildinfo && tsc -p tsconfig.json --declaration --emitDeclarationOnly",
@@ -32,8 +34,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "reynard-algorithms": "workspace:*",
-    "reynard-validation": "workspace:*"
+    "reynard-algorithms": "^0.43.0",
+    "reynard-validation": "^0.43.0"
   },
   "optionalDependencies": {
     "reynard-i18n": "workspace:*"
@@ -45,7 +47,7 @@
     "@vitest/ui": "3.2.4",
     "happy-dom": "19.0.2",
     "msw": "^2.11.3",
-    "reynard-testing": "workspace:*",
+    "reynard-testing": "^0.43.0",
     "typescript": "5.9.3",
     "vite": "7.1.9",
     "vite-plugin-solid": "2.11.9",
@@ -53,5 +55,20 @@
   },
   "peerDependencies": {
     "solid-js": "1.9.9"
+  },
+  "license": "MIT",
+  "keywords": [
+    "reynard",
+    "typescript",
+    "utilities",
+    "framework"
+  ],
+  "homepage": "https://github.com/RuneClaw17/reynard-core",
+  "bugs": {
+    "url": "https://github.com/RuneClaw17/reynard-core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RuneClaw17/reynard-core.git"
   }
 }
