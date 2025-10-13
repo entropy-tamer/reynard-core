@@ -1,6 +1,6 @@
 {
-  "name": "reynard-core",
-  "version": "0.2.1",
+  "name": "@entropy-tamer/reynard-core",
+  "version": "0.2.2",
   "description": "Core utilities and modules for Reynard framework",
   "type": "module",
   "main": "./dist/index.cjs",
