@@ -34,8 +34,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "reynard-algorithms": "^0.44.0",
-    "reynard-validation": "^0.44.0"
+    "reynard-algorithms": "workspace:*",
+    "reynard-validation": "workspace:*"
   },
   "optionalDependencies": {
     "reynard-i18n": "workspace:*"
@@ -47,7 +47,7 @@
     "@vitest/ui": "3.2.4",
     "happy-dom": "20.0.0",
     "msw": "^2.11.3",
-    "reynard-testing": "^0.44.0",
+    "reynard-testing": "workspace:*",
     "typescript": "5.9.3",
     "vite": "7.1.9",
     "vite-plugin-solid": "2.11.9",
@@ -56,19 +56,10 @@
   "peerDependencies": {
     "solid-js": "1.9.9"
   },
-  "license": "MIT",
-  "keywords": [
-    "reynard",
-    "typescript",
-    "utilities",
-    "framework"
-  ],
-  "homepage": "https://github.com/entropy-tamer/reynard-core",
-  "bugs": {
-    "url": "https://github.com/entropy-tamer/reynard-core/issues"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/entropy-tamer/reynard-core.git"
-  }
+  },
+  "homepage": "https://github.com/entropy-tamer/reynard-core",
+  "bugs": "https://github.com/entropy-tamer/reynard-core/issues"
 }
