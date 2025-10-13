@@ -96,7 +96,10 @@ describe("Enhanced Async Rate Limiting", () => {
 
     it("should support isPending method", () => {
       const mockFn = vi.fn().mockResolvedValue("result");
-      const debouncedFn = debounce(mockFn, 100, { precision: PrecisionTier.HIGH }) as AsyncDebouncedFunction<[string], string>;
+      const debouncedFn = debounce(mockFn, 100, { precision: PrecisionTier.HIGH }) as AsyncDebouncedFunction<
+        [string],
+        string
+      >;
 
       expect(debouncedFn.isPending()).toBe(false);
 

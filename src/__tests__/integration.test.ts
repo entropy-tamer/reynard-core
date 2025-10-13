@@ -266,7 +266,9 @@ describe("Security Integration Tests", () => {
 
       // Test password strength using the generateSecurePassword function
       const weakResult = weakPassword.length < 8;
-      const strongResult = strongPassword.length >= 8 && /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(strongPassword);
+      const strongResult =
+        strongPassword.length >= 8 &&
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(strongPassword);
 
       expect(weakResult).toBe(true); // weak password is indeed weak
       expect(strongResult).toBe(true);

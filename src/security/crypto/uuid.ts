@@ -11,6 +11,10 @@ import { generateSecureBytes } from "./random";
 
 /**
  * Generate a secure UUID v4
+ * 
+ * NOTE: This is for client-side use only. Database primary keys now use integer IDs
+ * with UUID public_id for external API compatibility and optimal performance.
+ * 
  * @example
  */
 export function generateSecureUUID(): string {
