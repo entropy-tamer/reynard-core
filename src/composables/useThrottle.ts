@@ -8,7 +8,7 @@
  */
 
 import { createSignal, createEffect, onCleanup } from "solid-js";
-import { throttle } from "reynard-algorithms";
+import { throttle } from "@entropy-tamer/reynard-algorithms";
 
 /**
  * Throttles a reactive value

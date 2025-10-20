@@ -23,3 +23,4 @@ export * from "./useGeolocation";
 export * from "./useClipboard";
 export * from "./localStorageSerializer";
 export * from "./storageEventHandler";
+export * from "./useVirtualScroll";

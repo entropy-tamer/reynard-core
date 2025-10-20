@@ -17,7 +17,7 @@ export { validateSQLInput, sanitizeSQLInput, validateSQLIdentifier, validateSQLP
 // have been moved to the dedicated reynard-validation package
 
 // Re-export URL validation from reynard-validation package
-export { validateUrlSecurity as validateURL } from "reynard-validation";
+export { validateUrlSecurity as validateURL } from "@entropy-tamer/reynard-validation";
 
 // Re-export JSON validation functions
 export { validateJSON, sanitizeJSON } from "./json-validation.js";

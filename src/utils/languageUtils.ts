@@ -36,7 +36,7 @@ import {
   detectLanguageFromExtension,
   detectLanguageFromContent as _detectLanguageFromContent,
 } from "./language-detection.js";
-import { useI18n as _useI18n } from "reynard-i18n";
+import { useI18n as _useI18n } from "@entropy-tamer/reynard-i18n";
 
 // Legacy exports for backward compatibility
 export { getLanguageInfo as detectLanguage } from "./language-detection.js";

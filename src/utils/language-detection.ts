@@ -8,7 +8,7 @@
 
 import { LanguageInfo, LanguageDetectionResult } from "./language-types.js";
 import { WEB_LANGUAGES, PROGRAMMING_LANGUAGES } from "./language-mappings.js";
-import { useI18n as _useI18n } from "reynard-i18n";
+import { useI18n as _useI18n } from "@entropy-tamer/reynard-i18n";
 
 /**
  * Combined language mappings
