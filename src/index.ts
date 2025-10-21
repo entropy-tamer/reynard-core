@@ -27,3 +27,4 @@ export * from "./image-utils";
 
 // Re-export key types for convenience
 export type { Notification } from "./modules/notifications";
+// Test comment for version verification
