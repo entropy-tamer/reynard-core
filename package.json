@@ -38,7 +38,7 @@
     "@entropy-tamer/reynard-validation": "0.2.0"
   },
   "optionalDependencies": {
-    "@entropy-tamer/reynard-i18n": "^0.44.15"
+    "@entropy-tamer/reynard-i18n": "^0.44.16"
   },
   "devDependencies": {
     "@solidjs/testing-library": "0.8.10",
