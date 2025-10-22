@@ -1,5 +1,5 @@
 {
-  "name": "reynard-core",
+  "name": "@entropy-tamer/reynard-core",
   "version": "0.2.2",
   "description": "Core utilities and modules for Reynard framework",
   "type": "module",
@@ -34,39 +34,26 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@entropy-tamer/reynard-algorithms": "0.3.2",
-    "@entropy-tamer/reynard-validation": "0.2.0"
+    "@entropy-tamer/reynard-algorithms": "workspace:*",
+    "@entropy-tamer/reynard-validation": "workspace:*"
   },
   "optionalDependencies": {
-    "@entropy-tamer/reynard-i18n": "^0.44.8"
+    "@entropy-tamer/reynard-i18n": "workspace:*"
   },
   "devDependencies": {
     "@solidjs/testing-library": "0.8.10",
     "@types/node": "24.9.1",
     "@vitest/coverage-v8": "3.2.4",
     "@vitest/ui": "3.2.4",
-    "happy-dom": "20.0.8",
-    "msw": "^2.11.6",
-    "@entropy-tamer/reynard-testing": "0.2.0",
+    "happy-dom": "20.0.0",
+    "msw": "^2.11.3",
+    "@entropy-tamer/reynard-testing": "workspace:*",
     "typescript": "5.9.3",
-    "vite": "7.1.11",
-    "vite-plugin-solid": "2.11.10",
+    "vite": "7.1.9",
+    "vite-plugin-solid": "2.11.9",
     "vitest": "3.2.4"
   },
   "peerDependencies": {
     "solid-js": "1.9.9"
-  },
-  "license": "MIT",
-  "keywords": [
-    "reynard",
-    "typescript",
-    "utilities",
-    "framework"
-  ],
-  "homepage": "https://github.com/entropy-tamer/reynard-core",
-  "bugs": "https://github.com/entropy-tamer/reynard-core/issues",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/entropy-tamer/reynard-core.git"
   }
 }
