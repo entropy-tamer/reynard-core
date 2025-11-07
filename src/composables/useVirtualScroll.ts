@@ -38,10 +38,10 @@ export interface VirtualScrollState {
 
 /**
  * Virtual scrolling composable for efficient rendering of large lists
- * 
+ *
  * @param options - Configuration options for virtual scrolling
  * @returns Virtual scroll state and controls
- * 
+ *
  * @example
  * ```tsx
  * const { state, scrollTo, scrollToIndex } = useVirtualScroll({
@@ -50,9 +50,9 @@ export interface VirtualScrollState {
  *   containerHeight: 400,
  *   bufferSize: 5
  * });
- * 
+ *
  * return (
- *   <div 
+ *   <div
  *     style={{ height: `${state().containerHeight}px`, overflow: 'auto' }}
  *     onScroll={(e) => scrollTo(e.currentTarget.scrollTop)}
  *   >
@@ -67,13 +67,7 @@ export interface VirtualScrollState {
  * ```
  */
 export function useVirtualScroll(options: VirtualScrollOptions) {
-  const {
-    itemCount,
-    itemHeight,
-    containerHeight,
-    bufferSize = 5,
-    smoothScrolling = false
-  } = options;
+  const { itemCount, itemHeight, containerHeight, bufferSize = 5, smoothScrolling = false } = options;
 
   // Calculate derived values
   const visibleItemCount = Math.ceil(containerHeight / itemHeight);
@@ -88,7 +82,7 @@ export function useVirtualScroll(options: VirtualScrollOptions) {
   const state = createMemo((): VirtualScrollState => {
     const currentStartIndex = startIndex();
     const currentEndIndex = endIndex();
-    
+
     return {
       scrollTop: scrollTop(),
       startIndex: currentStartIndex,
@@ -96,17 +90,14 @@ export function useVirtualScroll(options: VirtualScrollOptions) {
       totalHeight,
       topSpacerHeight: currentStartIndex * itemHeight,
       bottomSpacerHeight: (itemCount - currentEndIndex) * itemHeight,
-      visibleItemCount: currentEndIndex - currentStartIndex
+      visibleItemCount: currentEndIndex - currentStartIndex,
     };
   });
 
   // Update visible range based on scroll position
   const updateVisibleRange = (newScrollTop: number) => {
     const newStartIndex = Math.max(0, Math.floor(newScrollTop / itemHeight) - bufferSize);
-    const newEndIndex = Math.min(
-      itemCount,
-      newStartIndex + visibleItemCount + (bufferSize * 2)
-    );
+    const newEndIndex = Math.min(itemCount, newStartIndex + visibleItemCount + bufferSize * 2);
 
     setScrollTop(newScrollTop);
     setStartIndex(newStartIndex);
@@ -183,13 +174,13 @@ export function useVirtualScroll(options: VirtualScrollOptions) {
     /** Check if item is visible */
     isItemVisible,
     /** Get visible item indices */
-    getVisibleIndices
+    getVisibleIndices,
   };
 }
 
 /**
  * Hook for creating a virtual scroll container with automatic scroll handling
- * 
+ *
  * @param options - Virtual scroll options
  * @param onScroll - Optional scroll handler
  * @returns Container props and virtual scroll controls
@@ -209,17 +200,17 @@ export function useVirtualScrollContainer(
   const containerProps = {
     style: {
       height: `${options.containerHeight}px`,
-      overflow: 'auto',
-      position: 'relative' as const
+      overflow: "auto",
+      position: "relative" as const,
     },
     onScroll: (e: Event) => {
       const target = e.currentTarget as HTMLElement;
       virtualScroll.scrollTo(target.scrollTop);
-    }
+    },
   };
 
   return {
     ...virtualScroll,
-    containerProps
+    containerProps,
   };
 }
